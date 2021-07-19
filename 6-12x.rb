@@ -1,37 +1,19 @@
 print "要素数："
-a =  gets.to_i
-b = []
+n = gets.to_i
 
+a = Array.new()
 i = 0
-for n in i...a do
-    i += 1
-    b[i] = 1 + rand(10)
-end
-
-i = 10
-for o in 1...i do
-    i -= 1
-    j = 0
-    for q in j...a do
-        j += 1
-        if b[j] >= i
-            puts "* "
-        else
-            puts "  "
+while i < n
+    b = 1 + rand(10)
+        if a.include?(b)
+            next
         end
-        puts
-    end
+    a << b
+    i += 1
 end
 
-i = 0
-for r in i...(2 * a) do
-    i += 1
-    print '-'
-end
-
-i = 0
-for s in i...a do
-    i += 1
-    print (i % 10).to_i + (" ").to_i
-    puts 
+j = 0
+while j < n
+    puts "a[#{j}] = #{a[j]}"
+    j += 1
 end
