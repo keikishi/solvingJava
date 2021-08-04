@@ -1,26 +1,21 @@
 puts "整数を加算します"
 
-todal = 0
-i = 0
-for n in i..10 do
-    i += 1
-    puts "■第" + i.to_s + "グループ"
-    
+total = []
+i = 1
+isBreak = 99999
+while 10 >= i
+    puts "■第 #{i} グループ"
     j = 0
-    s = 5
-    for m in j...s do
-        j += 1
+    while 10 >= j
         print "整数："
         t = gets.to_i
-        
-        if t == 99999.to_i
-            break
-        end
-        if t == 88888.to_i
-            next
-        end
-        total += t
+        break if t == 88888
+        break if t == 99999
+        total << t
+        j += 1
     end
+    break if t == 99999
+    i += 1
 end
 
-print "\n合計は" + total.to_s + "です"
+print "合計は #{total.inject(:+)} です"
