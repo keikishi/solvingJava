@@ -3,9 +3,7 @@ x = gets.to_i
 
 i = 0
 cnum = []
-a = []
 y = []
-z = []
 while i < x
     print "#{i + 1}組の人数：" 
     cnum << gets.to_i
@@ -17,7 +15,6 @@ while i < x
         j += 1
     end
     y << point
-    z += point
     i += 1
 end
 
@@ -28,4 +25,4 @@ while i < y.size
     i += 1
 end
 
-puts "計　#{z.sum} #{z.sum/cnum.sum}"
+puts 

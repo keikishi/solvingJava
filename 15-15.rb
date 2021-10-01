@@ -1,47 +1,20 @@
-month = [0,31,28,31,30,31,30,31,31,30,31,30]
+require 'date'
+def monthly_calendar(this_day = Date.today) 
+    first_day = Date.new(this_day.year,this_day.month,1)
+    start_day = first_day - first_day.strftime('%w').to_i
 
-
-
-day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-a = 2
-num = ARGV[0].to_i
-
-for i in 0..num-1
-  a += month[i]
-end
-
-first = a % 7
-
-for i in 0..6
-  print day[i], " "
-end
-
-print "\n"
-
-space = " "
-
-nextd = 0
-
-for i in 0..6
-  if i <= first
-    printf "%3s ", space
-  else
-    printf "%3d ", i - first
-  end
-  nextd = i - first + 1
-end
-
-print "\n"
-
-d = nextd
-while d <= month[num]
-  for j in 0..6
-    if d + j <= month[num]
-      printf "%3d ", d + j
-    else
-      printf "%3s ", space
+    puts this_day.strftime('%B %Y').center(21)
+    puts "\sSu\sMo\sTu\sWe\sTh\sFr\sSa"
+    while start_day.month <= first_day.month
+        if start_day.month != first_day.month
+            print "\s\s\s"
+        elsif start_day.strftime('%u') == "6"
+            print "\s" + start_day.strftime('%e') + "\n"
+        else
+            print "\s" + start_day.strftime('%e')
+       end
+        start_day += 1
     end
-  end
-  print "\n"
-  d += 7
 end
+
+puts monthly_calendar(Date.new(2020, 1))

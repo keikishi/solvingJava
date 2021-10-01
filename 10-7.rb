@@ -1,5 +1,4 @@
 class MinMax
-
     def min1(a, b)
         a < b ? a : b
     end
@@ -18,7 +17,7 @@ class MinMax
     def min3(a)
         i = 0
         mini = a[0]
-        while i < a[i].size
+        while i < a.size
             if a[i] < mini
                 mini = a[i]
             end
@@ -53,10 +52,7 @@ class MinMax
             i -= 1
         end
         return c
-
-
-
-    
+    end
 end
 
 print "xの値："
@@ -76,6 +72,11 @@ while i < an
     i += 1
 end
 
-print "x、yの最小値は#{min1(x, y)}です\n"
-print "x、y、zの最小値は#{min2(x, y, z)}です\n"
-print "配列aの最小値は#{min3(a)}です\n"
+num = MinMax.new
+num_min1 = num.min1(x, y)
+num_min2 = num.min2(x, y, z)
+num_min3 = num.min3(a)
+
+print "x、yの最小値は#{num_min1}です\n"
+print "x、y、zの最小値は#{num_min2}です\n"
+print "配列aの最小値は#{num_min3}です\n"
