@@ -1,6 +1,9 @@
 class Car
     attr_reader :name, :number, :width, :height, :length, :pointX, :pointY, :tankage, :fuel, :sfc
 
+    @@pointX = 0
+    @@pointY = 0
+
     def initialize(name, number, width, height, length, tankage, fuel, sfc)
         @name = name
         @number = number 
@@ -11,7 +14,7 @@ class Car
         @fuel = fuel
         @sfc = sfc
     end
-    
+
     def accFuel()
         tankage >= fuel ? tankage : fuel
     end
@@ -34,18 +37,13 @@ class Car
             return false
         else
             fuel = fuel - f
-            x = x + dx
-            y = y + dy
+            @@pointX = @@pointX + dx
+            @@pointY = @@pointY + dy
             return true
         end
     end
 
-    def refuel(df)
-        if df > 0
-            fuel = fuel + df
-            if fuel > tankage
-                fuel = tankage
-            end
-        end
+    def pointNow()
+        puts "(#{@@pointX}, #{@@pointY})"
     end
 end

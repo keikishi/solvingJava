@@ -25,12 +25,12 @@ while i < x
 end
 
 puts "配列Cの各要素の値は次のようになっています。"
+def printArray
 i = 0
 while i < y.size
     j = 0
     while j < y[i].size
       print "#{y[i][j]}"
-      print " "
       j += 1
     end
     puts

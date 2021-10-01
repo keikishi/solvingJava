@@ -1,8 +1,8 @@
-def min(a, b)
+def min1(a, b)
     a < b ? a : b
 end
 
-def min(a, b, c)
+def min2(a, b, c)
     mini = a
     if b < mini
         mini = b
@@ -13,7 +13,7 @@ def min(a, b, c)
 end
 
 a = []
-def min(a)
+def min3(a)
     i = 0
     mini = a[0]
     while i < a.size
@@ -42,6 +42,6 @@ while i < an
     i += 1
 end
 
-print "x、yの最小値は#{min(x, y)}です\n"
-print "x、y、zの最小値は#{min(x, y, z)}です\n"
-print "配列aの最小値は#{min(a)}です\n"
+print "x、yの最小値は#{min1(x, y)}です\n"
+print "x、y、zの最小値は#{min2(x, y, z)}です\n"
+print "配列aの最小値は#{min3(a)}です\n"

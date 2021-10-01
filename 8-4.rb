@@ -1,6 +1,9 @@
 class Car
     attr_reader :name, :number, :width, :height, :length, :pointX, :pointY, :tankage, :fuel, :sfc
 
+    @@pointX = 0
+    @@pointY = 0
+
     def initialize(name, number, width, height, length, tankage, fuel, sfc)
         @name = name
         @number = number 
@@ -34,21 +37,17 @@ class Car
             return false
         else
             fuel = fuel - f
-            x = x + dx
-            y = y + dy
+            @@pointX = @@pointX + dx
+            @@pointY = @@pointY + dy
             return true
         end
     end
 
-    def refuel(df)
-        if df > 0
-            fuel = fuel + df
-            if fuel > tankage
-                fuel = tankage
-            end
-        end
+    def pointNow()
+        puts "(#{@@pointX}, #{@@pointY})"
     end
 end
+
 
 vitz = Car.new("ビッツ", "福岡999ん99-99", 1660, 1500, 3640, 40.0, 35.0, 12.0)
 march = Car.new("マーチ", "福岡999ん99-98", 1660, 1525, 3695, 41.0, 35.0, 12.0)

@@ -90,4 +90,3 @@ while true
         print "燃料不足！"
     end
 end
-    

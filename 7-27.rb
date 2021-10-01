@@ -8,7 +8,7 @@ def addMatrix(x, y, z)
     end
 
     i = 0
-    while i < x.size
+    while i &lt; x.size
         if x[i].size != y[i].size || y.size != z.size
             return false
         end
@@ -29,9 +29,9 @@ end
 
 i = 0
 m = Array.new() {Array.new()}
-while i < m.size
+while i &lt; m.size
     j = 0
-    while j < m[i].size
+    while j &lt; m[i].size
         print "#{m[i][j]}   "
         j += 1
     end

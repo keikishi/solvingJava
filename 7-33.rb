@@ -6,7 +6,7 @@ def printArray(a)
         i += 1
     end
     print a[a.size - 1]
-    puts
+    puts 
 end
 
 a = Array.new() {Array.new()}

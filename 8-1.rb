@@ -17,8 +17,4 @@ print "体重：#{suzuki.weight}kg\n"
 puts
 print "名前：#{takada.name}\n"
 print "身長：#{takada.height}cm\n"
-<<<<<<< HEAD
 print "体重：#{takada.weight}kg\n"
-=======
-print "体重：#{takada.weight}kg\n"
->>>>>>> f877c29053bc2a2182f53ff7989a8dfc6030ec5b
